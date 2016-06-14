@@ -35,9 +35,12 @@ require 'harck/pagin_count' # requires only paging count
 
 ## Features
 
-[Harck::Count](https://github.com/JoshMcKin/harck#harckcount) - Count + Group queries run as subqueries
+[Harck::Count](https://github.com/JoshMcKin/harck#harckcount) - Count + Group queries run as sub-queries
+
 [Harck::PagingCount](https://github.com/JoshMcKin/harck#harckpagingcount) - Count + Group safe count query for paging
+
 [Harck::ScrubNumeric](https://github.com/JoshMcKin/harck#harckscrubnumeric) - Scrub non-numeric characters before setting numeric data types
+
 [Harck::UsDate & Harck::UsDateTime](https://github.com/JoshMcKin/harck#harckusdate--harckusdatetime) - Try to parse US formatted dates correctly
 
 ### Harck::Count

@@ -1,6 +1,7 @@
+require 'harck'
+
 module Harck
   module UsDate
-
     US_DATE_REGEX = (/(^[0-9]{1,2}[- \/.][0-9]{1,2}[- \/.][0-9]{4})/).freeze
 
     DATE_TR = ('/\/|\./').freeze

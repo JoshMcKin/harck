@@ -3,35 +3,19 @@
 Hacks for ActiveRecord
 
 This library contains hacks for ActiveRecord I have found useful over time. The hacks are not for everyone and should be used with caution.
+Currently supports Rails 4.2 with Ruby >= 2.0 
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-```ruby
-
- # To require all hacks
- gem 'harck'
-
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install harck
-
-Finally create a harck.rb to config/initializer and require the hacks
-
-```
-require 'harck/all' # requires all
-
-# or
-require 'harck/pagin_count' # requires only paging count
-
-```
+	``` 
+	# To require all hacks
+	gem 'harck', :require ['harck/all']
+	
+	# OR pick and choose your hacks
+	gem 'harck', :require ['harck/paging_count', 'harck/scub_numeric']
+	```
 
 ## Features
 

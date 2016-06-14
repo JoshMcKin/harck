@@ -1,9 +1,10 @@
+require 'harck'
 require 'active_support/core_ext/module/delegation'
+
 module Harck
-
   module PagingCount
-
     module Querying
+
       delegate :paging_count, :to =>  :all
     end
 
@@ -17,11 +18,8 @@ module Harck
           count(column_name, options)
         end
       end
-
     end
-
   end
-
 end
 ActiveRecord::Querying.send(:include, Harck::PagingCount::Querying)
 ActiveRecord::Relation.send(:include, Harck::PagingCount::Relation)

@@ -1,3 +1,5 @@
+require 'harck'
+
 module Harck
   module ScrubNumeric
     SCRUB_NUMBER_STRING_REGEX = /[^0-9\.\+\-]/.freeze
@@ -10,8 +12,6 @@ module Harck
     end
   end
 end
-
-require "active_record/type/numeric"
 ActiveRecord::Type::BigInteger.send(:prepend, Harck::ScrubNumeric)
 ActiveRecord::Type::Decimal.send(:prepend, Harck::ScrubNumeric)
 ActiveRecord::Type::DecimalWithoutScale.send(:prepend, Harck::ScrubNumeric)

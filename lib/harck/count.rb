@@ -1,6 +1,7 @@
+require 'harck'
+
 module Harck
   module Count
-    DISTINCT_REGEX = /\s*DISTINCT[\s(]+/i.freeze
 
     private
 

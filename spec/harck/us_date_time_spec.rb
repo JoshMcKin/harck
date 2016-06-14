@@ -8,5 +8,4 @@ describe Harck::UsDateTime do
   it "should handle US formatted dates" do
     expect(user.datetime).to eql(User.new(datetime: "2014-02-12 12:01").datetime)
   end
-
 end

@@ -16,7 +16,6 @@ describe Harck::PagingCount do
     it "should return an integer" do
       expect(User.group(:name).paging_count).to eql(2)
     end
-
   end
 
   context "with DISTINCT in .select" do
@@ -24,7 +23,6 @@ describe Harck::PagingCount do
     it "should return an integer" do
       expect(User.select("DISTINCT(name)").paging_count).to eql(2)
     end
-
   end
 
     context "with .distinct set" do
@@ -32,7 +30,5 @@ describe Harck::PagingCount do
     it "should return an integer" do
       expect(User.select(:name).distinct.paging_count).to eql(2)
     end
-
   end
-
 end

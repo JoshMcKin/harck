@@ -6,7 +6,7 @@ module Harck
     
     def type_cast(value)
       if value.is_a? ::String
-        value.gsub!(SCRUB_NUMBER_STRING_REGEX,'')
+        value = value.gsub(SCRUB_NUMBER_STRING_REGEX,'')
       end
       super(value)
     end

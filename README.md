@@ -87,6 +87,31 @@ Does your ActiveRecord model accept money strings for numeric attributes? Does y
 
 	```
 
+### Harck::UsDate & Harck::UsDateTime
+
+For me, without fail, one of the first causes for date time inconsistencies when working with outside data sources has been US date format parsing. The Harck::UsDate and Harck::UsDateTime hacks allow ActiveRecord to correctly parse US date formats.
+
+	```
+	2.3.0 :001 > require "harck/us_date"
+	=> true
+
+	2.3.0 :002 > 2.3.0 :013 > user = User.new(date: "02-12-2014")
+    => #<User id: nil, name: nil, clicks: 0, money: nil, date = "2016-02-12"> 
+
+    2.3.0 :003 > user.date
+ 	=> Thu, 01 Dec 2016 
+
+ 	2.3.0 :001 > require "harck/us_date_time"
+	=> true
+
+	2.3.0 :002 > 2.3.0 :013 > user = User.new(datetime: "02-12-2014 02:55 pm")
+    => #<User id: nil, name: nil, clicks: 0, money: nil, datetime = "2014-12-02 14:55:00"> 
+
+    2.3.0 :007 > user.datetime
+ 	=> 2014-12-02 14:55:00 UTC
+
+	```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

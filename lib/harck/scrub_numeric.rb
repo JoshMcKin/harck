@@ -8,7 +8,6 @@ module Harck
       end
       super(value)
     end
-
   end
 end
 

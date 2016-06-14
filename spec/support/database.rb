@@ -35,6 +35,8 @@ class TestMigrations < ActiveRecord::Migration
         t.string :name
         t.integer :clicks, default: 0
         t.decimal :money, :precision => 10, :scale => 2
+        t.date :date
+        t.datetime :datetime
       end
     rescue => e
       puts "tables failed to create: #{e}"

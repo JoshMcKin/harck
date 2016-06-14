@@ -1,0 +1,12 @@
+common: &common
+  pool: 100
+  timeout: 5000
+  build_connection_class: true
+  adapter: mysql2
+
+without_db:
+  <<: *common
+
+test:
+  <<: *common
+  database: harck_test

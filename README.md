@@ -37,7 +37,7 @@ require 'harck/pagin_count' # requires only paging count
 
 ### Harck::Count
 
-If you have used the ActiveRecord query method `.group` with a paging gem you've probably encountered some problems. When used with `.group`, `.count` returns a hash. In order for paging to work, you must get the length of the hash to determine your total result set. While the hash "feature" sounds great, if you have a large data set, and setup paging you may discover your app is devouring memory, which is always fun to debug. You may have also had issues with unexpected count if you had DISTINCT set in you select statement and expected AR to respect it.
+If you have used the ActiveRecord query method `.group` with a paging gem you've probably encountered some problems. When used with `.group`, `.count` returns a hash. In order for paging to work, you must get the length of the hash to determine your total result set. While the hash "feature" sounds great, if you have a large data set, and setup paging you may discover your app is devouring memory, which is always fun to debug. You may have also had issues with unexpected count results if you had DISTINCT set in your select statement and expected AR to respect it.
 
 The Count hack forces all `.count` calls on ActiveRecord::Relations with `.group` values or with distinct select statements to perform a subquery for the dataset which is placed in the FROM statement for the count.
 

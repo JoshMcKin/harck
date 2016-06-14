@@ -35,6 +35,11 @@ require 'harck/pagin_count' # requires only paging count
 
 ## Features
 
+[Harck::Count](https://github.com/JoshMcKin/harck#harckcount) - Count + Group queries run as subqueries
+[Harck::PagingCount](https://github.com/JoshMcKin/harck#harckpagingcount) - Count + Group safe count query for paging
+[Harck::ScrubNumeric](https://github.com/JoshMcKin/harck#harckscrubnumeric) - Scrub non-numeric characters before setting numeric data types
+[Harck::UsDate & Harck::UsDateTime](https://github.com/JoshMcKin/harck#harckusdate--harckusdatetime) - Try to parse US formatted dates correctly
+
 ### Harck::Count
 
 If you have used the ActiveRecord query method `.group` with a paging gem you've probably encountered some problems. When used with `.group`, `.count` returns a hash. In order for paging to work, you must get the length of the hash to determine your total result set. While the hash "feature" sounds great, if you have a large data set, and setup paging you may discover your app is devouring memory, which is always fun to debug. You may have also had issues with unexpected count results if you had DISTINCT set in your select statement and expected AR to respect it.
@@ -96,10 +101,10 @@ For me, without fail, one of the first causes for date time inconsistencies when
 	=> true
 
 	2.3.0 :002 > 2.3.0 :013 > user = User.new(date: "02-12-2014")
-    => #<User id: nil, name: nil, clicks: 0, money: nil, date = "2016-02-12"> 
+    => #<User id: nil, name: nil, clicks: 0, money: nil, date = "2014-02-12"> 
 
     2.3.0 :003 > user.date
- 	=> Thu, 01 Dec 2016 
+ 	=> Fri, 12 Feb 2016 
 
  	2.3.0 :001 > require "harck/us_date_time"
 	=> true

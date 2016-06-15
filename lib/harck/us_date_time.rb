@@ -1,10 +1,9 @@
 require 'harck'
+require 'harck/constants'
 
 module Harck
   module UsDateTime
-    US_DATE_REGEX = (/(^[0-9]{1,2}[- \/.][0-9]{1,2}[- \/.][0-9]{4})/).freeze
-
-    SPLIT_DATE_REGEX = (/\-|\/|\./).freeze
+    include Harck::Constants::DateTime
 
     private
 

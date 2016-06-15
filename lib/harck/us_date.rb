@@ -1,13 +1,10 @@
 require 'harck'
+require 'harck/constants'
 
 module Harck
   module UsDate
-    US_DATE_REGEX = (/(^[0-9]{1,2}[- \/.][0-9]{1,2}[- \/.][0-9]{4})/).freeze
-
-    DATE_TR = ('/\/|\./').freeze
-
-    US_DATE_FORMAT = "%m-%d-%Y".freeze
-
+    include Harck::Constants::DateTime
+    
     private
 
     def cast_value(value)

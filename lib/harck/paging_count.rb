@@ -1,5 +1,6 @@
 require 'harck'
 require 'active_support/core_ext/module/delegation'
+require 'harck/constants'
 
 module Harck
   module PagingCount
@@ -9,7 +10,8 @@ module Harck
     end
 
     module Relation
-
+      include Harck::Constants::Count
+      
       def paging_count(column_name = nil, options = {})
         if (group_values.any? || (distinct_value || (select_values.join(", ") =~ DISTINCT_REGEX)))
           sub_query = column_name.blank? ? self : self.select(column_name)

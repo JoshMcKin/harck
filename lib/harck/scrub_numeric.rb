@@ -5,7 +5,7 @@ module Harck
     SCRUB_NUMBER_STRING_REGEX = /[^0-9\.\+\-]/.freeze
     
     def type_cast(value)
-      if value.is_a? ::String
+      if value.is_a?(::String)
         value = value.gsub(SCRUB_NUMBER_STRING_REGEX,'')
       end
       super(value)

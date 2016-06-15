@@ -1,8 +1,9 @@
 require 'harck'
-
+require 'harck/constants'
 module Harck
   module Count
-
+    include Harck::Constants::Count
+    
     private
 
     def perform_calculation(operation, column_name, options = {})
